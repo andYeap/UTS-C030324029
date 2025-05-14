@@ -2,9 +2,9 @@
 #include <conio.h>
 using namespace std;
 
-const int MAX_SIZE = 100; // Ukuran maksimum array
-int array[MAX_SIZE]; // Array dibuat global agar bisa digunakan di semua fungsi
-int n; // Jumlah elemen array
+const int MAX_SIZE = 100; // Ukuran maksimum dataArray
+int dataArray[MAX_SIZE]; // dataArray dibuat global agar bisa digunakan di semua fungsi
+int n; // Jumlah elemen dataArray
 
 void dMenu();
 void inputData();
@@ -14,7 +14,7 @@ void SepatahKata(string);
 
 void dMenu(){
 system("cls");
-cout<<"Aplikasi Sorting Array"<<"\n";       
+cout<<"Aplikasi Sorting dataArray"<<"\n";       
 cout<<"1. Masukan Data"<<"\n";
 cout<<"2. Tampilkan data"<<"\n";
 cout<<"3. Sorting data"<<"\n";
@@ -25,7 +25,7 @@ cout<<"Masukan angka :";
 
 void inputData() {
     system("cls");
-    cout << "Masukkan jumlah elemen array (maksimal " << MAX_SIZE << "): ";
+    cout << "Masukkan jumlah elemen dataArray (maksimal " << MAX_SIZE << "): ";
     cin >> n;
     if (n > MAX_SIZE) {
         cout << "Jumlah elemen melebihi batas maksimum!" << endl;
@@ -35,15 +35,15 @@ void inputData() {
     cout << "Masukkan " << n << " angka:\n";
     for (int i = 0; i < n; ++i) {
         cout << "Elemen ke-" << i + 1 << ": ";
-        cin >> array[i];
+        cin >> dataArray[i];
     }
 }
 
 void outputData() {
   system("cls");
-  cout << "Array yang diinput: ";
+  cout << "dataArray yang diinput: ";
   for (int i = 0; i < n; ++i) {
-      cout << array[i];
+      cout << dataArray[i];
       if (i != n - 1) cout << ", "; 
   }
   getch();
@@ -54,19 +54,19 @@ void bubbleSort() {
   // Melakukan bubble sort
   for (int i = 0; i < n - 1; ++i) {
       for (int j = 0; j < n - i - 1; ++j) {
-          if (array[j] > array[j + 1]) {
-              // Tukar array[j] dan array[j + 1]
-              int temp = array[j];
-              array[j] = array[j + 1];
-              array[j + 1] = temp;
+          if (dataArray[j] > dataArray[j + 1]) {
+              // Tukar dataArray[j] dan dataArray[j + 1]
+              int temp = dataArray[j];
+              dataArray[j] = dataArray[j + 1];
+              dataArray[j + 1] = temp;
           }
       }
   }
 
   // Menampilkan hasil setelah pengurutan
-  cout << "Array setelah diurutkan: ";
+  cout << "dataArray setelah diurutkan: ";
   for (int i = 0; i < n; ++i) {
-      cout << array[i];
+      cout << dataArray[i];
       if (i != n - 1) cout << ", "; 
   }
   getch();
