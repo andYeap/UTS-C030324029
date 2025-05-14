@@ -39,6 +39,17 @@ void inputData() {
     }
 }
 
+void outputData() {
+  system("cls");
+  cout << "Array yang diinput: ";
+  for (int i = 0; i < n; ++i) {
+      cout << array[i];
+      if (i != n - 1) cout << ", "; 
+  }
+  getch();
+}
+
+
 
 void SepatahKata(){
   system("cls");
