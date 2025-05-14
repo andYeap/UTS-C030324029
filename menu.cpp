@@ -14,7 +14,7 @@ void SepatahKata(string);
 
 void dMenu(){
 system("cls");
-cout<<"Aplikasi Sorting dataArray"<<"\n";       
+cout<<"Aplikasi Sorting Array"<<"\n";       
 cout<<"1. Masukan Data"<<"\n";
 cout<<"2. Tampilkan data"<<"\n";
 cout<<"3. Sorting data"<<"\n";
@@ -25,7 +25,7 @@ cout<<"Masukan angka :";
 
 void inputData() {
     system("cls");
-    cout << "Masukkan jumlah elemen dataArray (maksimal " << MAX_SIZE << "): ";
+    cout << "Masukkan jumlah elemen Array (maksimal " << MAX_SIZE << "): ";
     cin >> n;
     if (n > MAX_SIZE) {
         cout << "Jumlah elemen melebihi batas maksimum!" << endl;
@@ -41,7 +41,7 @@ void inputData() {
 
 void outputData() {
   system("cls");
-  cout << "dataArray yang diinput: ";
+  cout << "Array yang diinput: ";
   for (int i = 0; i < n; ++i) {
       cout << dataArray[i];
       if (i != n - 1) cout << ", "; 
@@ -55,7 +55,6 @@ void bubbleSort() {
   for (int i = 0; i < n - 1; ++i) {
       for (int j = 0; j < n - i - 1; ++j) {
           if (dataArray[j] > dataArray[j + 1]) {
-              // Tukar dataArray[j] dan dataArray[j + 1]
               int temp = dataArray[j];
               dataArray[j] = dataArray[j + 1];
               dataArray[j + 1] = temp;
@@ -63,8 +62,7 @@ void bubbleSort() {
       }
   }
 
-  // Menampilkan hasil setelah pengurutan
-  cout << "dataArray setelah diurutkan: ";
+  cout << "Array setelah diurutkan: ";
   for (int i = 0; i < n; ++i) {
       cout << dataArray[i];
       if (i != n - 1) cout << ", "; 
