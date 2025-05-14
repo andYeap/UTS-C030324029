@@ -1,57 +1,54 @@
 #include <iostream>
 #include <conio.h>
-#include <vector>
 using namespace std;
 
+const int MAX_SIZE = 100; // Ukuran maksimum array
+int array[MAX_SIZE]; // Array dibuat global agar bisa digunakan di semua fungsi
+int n; // Jumlah elemen array
+
+void dMenu();
+void inputData();
+void outputData();
+void bubbleSort();
+void SepatahKata(string);
 
 void dMenu(){
-  system("cls");
-  cout<<"Sort Insertion"<<"\n";       
-  cout<<"1. Memasukkan data"<<"\n";            
-  cout<<"2. Menampilkan data"<<"\n";            
-  cout<<"3. Sorting"<<"\n";           
-  cout<<"4. Sepatah kata"<<"\n";            
-  cout<<"5. Exit"<<"\n";           
-  cout<<"Masukan angka :";        
-}
-
-void mPertama(string pesan){
 system("cls");
-cout<<"hallo saya menu "<<pesan;
-getch();
+cout<<"Aplikasi Sorting Array"<<"\n";       
+cout<<"1. Masukan Data"<<"\n";
+cout<<"2. Tampilkan data"<<"\n";
+cout<<"3. Sorting data"<<"\n";
+cout<<"4. Sepatah Kata"<<"\n";            
+cout<<"5. Exit"<<"\n";           
+cout<<"Masukan angka :";        
 }
 
-void insertionSort(int data[], int n) {
-  system("cls");
-  int temp, j;
-  for (int i = 1; i < n; i++) {
-    temp = data[i];
-    j = i - 1;
-    while (j >= 0 && data[j] > temp) {
-      data[j + 1] = data[j];
-      j--;
+void inputData() {
+    system("cls");
+    cout << "Masukkan jumlah elemen array (maksimal " << MAX_SIZE << "): ";
+    cin >> n;
+    if (n > MAX_SIZE) {
+        cout << "Jumlah elemen melebihi batas maksimum!" << endl;
+        getch();
+        return;
     }
-    data[j + 1] = temp;
-  }
-  
-  for (int i = 0; i < n; i++)
-  {
-    cout << data[i] << " ";
-  }
-  
+    cout << "Masukkan " << n << " angka:\n";
+    for (int i = 0; i < n; ++i) {
+        cout << "Elemen ke-" << i + 1 << ": ";
+        cin >> array[i];
+    }
+}
+
+
+void SepatahKata(){
+  system("cls");
+  cout<<"Tidur is Life";
   getch();
 }
 
-void sepatahKata() {
-  system("cls");
-  cout << "Halo dunia" << endl;
-  getch();
-}
 
 int main() {
 char pl;
-int data[10] = {5, 2, 9, 1, 5, 6, 3, 7, 8, 4};
-
 do
 {
     dMenu();
@@ -59,24 +56,19 @@ do
   switch (pl)
   {
    case '1':
-    /* code */
-    mPertama("pertama");
+    inputData();
     break;
    case '2':
-    // mPertama("ke- dua");
-    insertionSort(data, sizeof(data) / sizeof(data[0]));
-    /* code */ 
+    outputData();
     break;  
-   case '3':
-    mPertama("ke- tiga");
-    /* code */
-    break;  
-   case '4':
-    sepatahKata();
-    /* code */
-    break;  
-  case '5':
-    /* code */
+    case '3':
+    bubbleSort();
+    break;
+    case '4':
+    SepatahKata();
+    break;
+    case '5':
+    cout<<"\nDan yap"<<endl;
     break;
   
   default:
