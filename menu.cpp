@@ -49,6 +49,28 @@ void outputData() {
   getch();
 }
 
+void bubbleSort() {
+  system("cls");
+  // Melakukan bubble sort
+  for (int i = 0; i < n - 1; ++i) {
+      for (int j = 0; j < n - i - 1; ++j) {
+          if (array[j] > array[j + 1]) {
+              // Tukar array[j] dan array[j + 1]
+              int temp = array[j];
+              array[j] = array[j + 1];
+              array[j + 1] = temp;
+          }
+      }
+  }
+
+  // Menampilkan hasil setelah pengurutan
+  cout << "Array setelah diurutkan: ";
+  for (int i = 0; i < n; ++i) {
+      cout << array[i];
+      if (i != n - 1) cout << ", "; 
+  }
+  getch();
+}
 
 
 void SepatahKata(){
