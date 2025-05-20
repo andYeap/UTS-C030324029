@@ -6,12 +6,6 @@ const int MAX_SIZE = 100; // Ukuran maksimum dataArray
 int dataArray[MAX_SIZE]; // dataArray dibuat global agar bisa digunakan di semua fungsi
 int n; // Jumlah elemen dataArray
 
-void dMenu();
-void inputData();
-void outputData();
-void bubbleSort();
-void SepatahKata(string);
-
 void dMenu(){
 system("cls");
 cout<<"Aplikasi Sorting Array"<<"\n";       
